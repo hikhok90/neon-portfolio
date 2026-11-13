@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jayvee — Modern, futuristic personal portfolio website with a strong cyberpunk neon aesthetic. Showcasing software architecture, AI, full-stack systems, and creative engineering." />
+  <meta name="theme-color" content="#05070e" />
+  <title>Jayvee // Futuristic Developer Portfolio</title>
+
+  <!-- Favicon Glyph -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300f0ff'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- Top Reading Progress Bar -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- Futuristic Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Interactive HTML5 Canvas Background -->
+  <canvas id="cyber-bg-canvas"></canvas>
+
+  <!-- Ambient Neon Light Orbs -->
+  <div class="bg-glow-orb orb-cyan"></div>
+  <div class="bg-glow-orb orb-magenta"></div>
+  <div class="bg-glow-orb orb-purple"></div>
+
+  <!-- Navigation Bar -->
+  <header id="cyber-navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="brand-logo" aria-label="Home">
+        <div class="logo-core"></div>
+        <span class="brand-text">JV <span class="nexus-tag">// NEXUS</span></span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active"><span class="nav-index">01.</span>HOME</a></li>
+          <li><a href="#about" class="nav-link"><span class="nav-index">02.</span>ABOUT</a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-index">03.</span>SKILLS</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-index">04.</span>PROJECTS</a></li>
+          <li><a href="#experience" class="nav-link"><span class="nav-index">05.</span>TIMELINE</a></li>
+          <li><a href="#certifications" class="nav-link"><span class="nav-index">06.</span>AWARDS</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-index">07.</span>CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <!-- Navbar Actions -->
+      <div class="navbar-actions">
+        <!-- SFX Toggle -->
+        <button id="audio-toggle-btn" class="audio-toggle-btn" type="button" aria-label="Toggle Cyber Sound Effects">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+          <span class="audio-state-text">SFX // ON</span>
+        </button>
+
+        <!-- Quick Resume Modal Trigger -->
+        <button class="btn-cyber-primary btn-sm trigger-resume-modal btn-cyber-nav" type="button">
+          <span>Resume</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-label="Open Mobile Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#hero" class="nav-link"><span class="nav-index">01.</span>HOME</a>
+      <a href="#about" class="nav-link"><span class="nav-index">02.</span>ABOUT</a>
+      <a href="#skills" class="nav-link"><span class="nav-index">03.</span>SKILLS</a>
+      <a href="#projects" class="nav-link"><span class="nav-index">04.</span>PROJECTS</a>
+      <a href="#experience" class="nav-link"><span class="nav-index">05.</span>TIMELINE</a>
+      <a href="#certifications" class="nav-link"><span class="nav-index">06.</span>AWARDS</a>
+      <a href="#contact" class="nav-link"><span class="nav-index">07.</span>CONTACT</a>
+      <button class="btn-cyber-primary trigger-resume-modal" style="margin-top: 1rem;" type="button">
+        <span>View Resume &amp; Specs</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         1. HERO SECTION
+         ======================================================================= -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column: Content -->
+          <div class="hero-content">
+            <div class="hero-system-status">
+              <span class="pulse-dot"></span>
+              <span id="hero-sys-id">SYS_ID // 2026.INIT</span>
+              <span class="status-sep">|</span>
+              <span class="t-green" id="hero-status-badge">Available for Hire</span>
+            </div>
+
+            <p class="hero-greeting">// HELLO DIGITAL FRONTIER</p>
+            <h1 class="hero-title">
+              Hi, I'm <span class="hero-name-gradient" id="hero-name">Jayvee</span>.
+            </h1>
+
+            <!-- Dynamic Rotating Typewriter Subtitle -->
+            <div class="hero-role-wrapper">
+              <span class="role-prefix">&gt; </span>
+              <span id="hero-dynamic-role">Aspiring Developer | Tech Enthusiast | Problem Solver</span>
+              <span class="typewriter-cursor"></span>
+            </div>
+
+            <p class="hero-bio" id="hero-bio">
+              Architecting cutting-edge digital experiences at the intersection of modern web technologies, artificial intelligence, and cyberpunk aesthetics. Dedicated to clean architecture, high-performance computing, and elegant user-centric design.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+              <a href="#projects" class="btn-cyber-primary">
+                <span>Explore My Portfolio</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+
+              <button class="btn-cyber-secondary trigger-resume-modal" type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download Resume</span>
+              </button>
+            </div>
+
+            <!-- Social Media Icon Matrix -->
+            <div class="hero-socials" id="hero-socials">
+              <!-- Rendered via components.js -->
+            </div>
+          </div>
+
+          <!-- Right Column: Holographic Avatar Visual -->
+          <div class="hero-visual">
+            <div class="hologram-avatar-container" data-tilt>
+              <div class="orbital-ring ring-outer"></div>
+              <div class="orbital-ring ring-middle"></div>
+              <div class="orbital-ring ring-inner"></div>
+
+              <div class="avatar-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+                  alt="Jayvee Developer Portrait"
+                  class="avatar-image"
+                />
+                <div class="avatar-scanline"></div>
+              </div>
+
+              <div class="avatar-status-badge">
+                <span class="pulse-dot"></span>
+                <span>STATUS: OPERATIONAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HUD Statistics Counter Grid -->
+        <div class="hero-stats-grid" id="hero-stats">
+          <!-- Rendered dynamically via components.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         2. ABOUT ME SECTION
+         ======================================================================= -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 02. IDENTITY &amp; CORE MISSION</div>
+          <h2 class="section-title">ABOUT <span class="text-gradient">MYSELF</span></h2>
+          <p class="section-subtitle">A blend of computational rigor, relentless curiosity, and futuristic aesthetic execution.</p>
+        </div>
+
+        <!-- Split Screen: Biography vs Interactive Cyber Terminal -->
+        <div class="about-grid">
+          <!-- Biography Text Column -->
+          <div class="about-bio-panel">
+            <h3 class="pillar-title" style="font-size: 1.45rem; margin-bottom: 1.25rem;">
+              <span class="t-accent">&gt;</span> Engineering the Next Evolution of the Web
+            </h3>
+            <div id="about-bio-text">
+              <!-- Populated from data.js -->
+            </div>
+          </div>
+
+          <!-- Interactive Mini Cyber Terminal -->
+          <div id="cyber-terminal">
+            <div class="terminal-titlebar">
+              <div class="terminal-dots">
+                <span class="t-dot dot-red"></span>
+                <span class="t-dot dot-yellow"></span>
+                <span class="t-dot dot-green"></span>
+              </div>
+              <span class="terminal-title">nexus-shell@jayvee-v2026.sh</span>
+              <span class="t-mono" style="font-size: 0.72rem; color: var(--neon-cyan);">SSH-256</span>
+            </div>
+
+            <div class="terminal-body">
+              <div class="terminal-line t-system">
+                <span class="t-accent">// SYSTEM INITIALIZED.</span> Welcome to Jayvee's Interactive Terminal Node.
+              </div>
+              <div class="terminal-line t-system">
+                Type <span class="t-accent">'help'</span> to inspect available subsystem protocols.
+              </div>
+            </div>
+
+            <!-- Terminal Command Prompt -->
+            <form class="terminal-form" onsubmit="return false;">
+              <span class="t-prompt">visitor@jayvee-nexus:~$</span>
+              <input type="text" class="terminal-input" placeholder="Type a command (e.g. 'help', 'skills', 'about')..." autocomplete="off" spellcheck="false" />
+            </form>
+
+            <!-- Quick Action Command Chips -->
+            <div class="terminal-quick-cmds">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-right: 0.35rem;">QUICK RUN:</span>
+              <button type="button" class="quick-cmd-btn" data-cmd="about">about</button>
+              <button type="button" class="quick-cmd-btn" data-cmd="skills">skills</button>
+              <button type="button" class="quick-cmd-btn" data-cmd="projects">projects</button>
+              <button type="button" class="quick-cmd-btn" data-cmd="contact">contact</button>
+              <button type="button" class="quick-cmd-btn" data-cmd="matrix">matrix</button>
+              <button type="button" class="quick-cmd-btn" data-cmd="clear">clear</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Card Pillar Matrix -->
+        <div class="about-pillars-grid" id="about-pillars">
+          <!-- Rendered dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. SKILLS & TECHNOLOGIES SECTION
+         ======================================================================= -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 03. TECHNICAL CAPABILITIES</div>
+          <h2 class="section-title">SKILLS &amp; <span class="text-gradient">TECHNOLOGIES</span></h2>
+          <p class="section-subtitle">A multi-disciplinary stack engineered for full-cycle product development from hardware edge to cloud UI.</p>
+        </div>
+
+        <!-- Filter Tabs & Real-Time Search Bar -->
+        <div class="skills-controls">
+          <div class="skills-search-wrapper">
+            <svg class="skills-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="skill-search-input" class="skills-search-input" placeholder="Search technologies (e.g. React, Python, Docker)..." />
+          </div>
+
+          <div class="skills-category-tabs" id="skills-categories">
+            <!-- Rendered from data.js -->
+          </div>
+        </div>
+
+        <!-- Interactive Skills Cards Grid -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- Rendered from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. PROJECTS SECTION
+         ======================================================================= -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 04. FEATURED PROTOCOLS</div>
+          <h2 class="section-title">INNOVATIVE <span class="text-gradient">PROJECTS</span></h2>
+          <p class="section-subtitle">High-impact applications, real-time architectures, and experimental cyberpunk interfaces.</p>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="projects-filter-bar" id="project-categories">
+          <!-- Rendered from data.js -->
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid" id="projects-grid">
+          <!-- Rendered dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. EXPERIENCE & EDUCATION SECTION
+         ======================================================================= -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 05. CHRONOLOGICAL MATRIX</div>
+          <h2 class="section-title">EXPERIENCE &amp; <span class="text-gradient">EDUCATION</span></h2>
+          <p class="section-subtitle">A proven track record of academic excellence, industry internships, and leadership initiatives.</p>
+        </div>
+
+        <!-- Tab Switcher -->
+        <div class="timeline-switcher" id="timeline-tab-btns">
+          <button class="tab-switch-btn active" data-tab="experience" type="button">
+            <span>Work &amp; Internships</span>
+          </button>
+          <button class="tab-switch-btn" data-tab="education" type="button">
+            <span>Academic Background</span>
+          </button>
+        </div>
+
+        <!-- Neon Circuit Timeline Track -->
+        <div class="timeline-wrapper" id="timeline-container">
+          <!-- Rendered dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. ACHIEVEMENTS & CERTIFICATIONS SECTION
+         ======================================================================= -->
+    <section id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 06. VERIFIED CREDENTIALS</div>
+          <h2 class="section-title">AWARDS &amp; <span class="text-gradient">CERTIFICATIONS</span></h2>
+          <p class="section-subtitle">Industry-accredited qualifications, hackathon championships, and specialized engineering specializations.</p>
+        </div>
+
+        <div class="certifications-grid" id="certifications-grid">
+          <!-- Rendered from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. CONTACT SECTION
+         ======================================================================= -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 07. TRANSMISSION CHANNELS</div>
+          <h2 class="section-title">INITIATE <span class="text-gradient">CONTACT</span></h2>
+          <p class="section-subtitle">Interested in collaborating, hiring, or discussing innovative tech? Send a transmission through the secure mesh.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Stylish Contact Info Panel -->
+          <div class="contact-info-panel">
+            <div class="cyber-card contact-terminal-box" data-tilt>
+              <div class="contact-terminal-header">
+                <span>SECURE_COMM // ENCRYPTED NODE</span>
+                <span class="pulse-dot"></span>
+              </div>
+
+              <!-- Direct Email -->
+              <div class="contact-detail-row">
+                <div class="contact-label">Direct Communication Channel</div>
+                <div class="contact-val-wrapper">
+                  <span class="contact-value" id="contact-email-value">jayvee.developer@example.com</span>
+                  <button type="button" class="copy-btn" id="copy-email-btn" title="Copy Email">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-detail-row">
+                <div class="contact-label">Physical Coordinates</div>
+                <div class="contact-value" id="contact-location-value">Metro Manila / Remote Worldwide</div>
+              </div>
+
+              <!-- Local Time Zone Live Clock -->
+              <div class="contact-detail-row">
+                <div class="contact-label">System Node Clock (Real-Time)</div>
+                <div class="clock-display" id="digital-clock">00:00:00 UTC+8</div>
+              </div>
+
+              <!-- Operational Status -->
+              <div class="contact-detail-row" style="margin-bottom: 0;">
+                <div class="contact-label">Transceiver Availability</div>
+                <div class="contact-value t-green" id="contact-status-value">OPERATIONAL // AVAILABLE FOR TRANSMISSION</div>
+              </div>
+            </div>
+
+            <!-- Social Links in Contact Box -->
+            <div class="cyber-card" style="padding: 1.5rem;" data-tilt>
+              <h4 class="pillar-title" style="font-size: 1.05rem; margin-bottom: 0.85rem;">
+                // NETWORK IDENTITIES
+              </h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                Connect via GitHub, professional networks, or reach out directly on Discord for live discussion.
+              </p>
+              <div class="hero-socials">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+                </a>
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Discord">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="cyber-card contact-form-panel" data-tilt>
+            <h3 class="form-title">// DISPATCH TRANSMISSION</h3>
+            <form id="cyber-contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Identifier / Full Name *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Mercer" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Return Communication Address *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="e.g. alex@corp.io" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Transmission Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="e.g. Project Collaboration / Software Opportunity" />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Transmission Payload / Message *</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Detail your project scope, timeline, requirements, or inquiry..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-cyber-primary submit-btn">
+                <span>TRANSMIT MESSAGE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===========================================================================
+       FOOTER
+       =========================================================================== -->
+  <footer id="cyber-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <div class="logo-core"></div>
+            <span>JV <span class="nexus-tag">// NEXUS</span></span>
+          </a>
+          <p class="footer-bio">
+            Futuristic software engineer dedicated to crafting bleeding-edge, high-framerate interactive digital architectures.
+          </p>
+        </div>
+
+        <a href="#hero" class="back-to-top-btn">
+          <span>RETURN TO TOP</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 JAYVEE. ALL RIGHTS RESERVED // MATRIX CORE STABLE.</div>
+        <div>DESIGNED WITH CYBERPUNK NEON AESTHETICS &amp; 60FPS OPTIMIZATION</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===========================================================================
+       PROJECT DETAIL MODAL
+       =========================================================================== -->
+  <div id="project-modal" class="cyber-modal" role="dialog" aria-modal="true" aria-label="Project Details">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <span class="modal-brand">// PROTOCOL INSPECTION MODULE</span>
+        <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-scroll-body" id="project-modal-body">
+        <!-- Rendered dynamically by components.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===========================================================================
+       RESUME PREVIEW MODAL
+       =========================================================================== -->
+  <div id="resume-modal" class="cyber-modal" role="dialog" aria-modal="true" aria-label="Resume Preview">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <span class="modal-brand">// ENCRYPTED DOSSIER // CURRICULUM VITAE</span>
+        <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-scroll-body">
+        <div class="modal-project-header">
+          <div class="modal-status-badge" style="color: var(--neon-cyan);">
+            <span class="status-pulse-dot" style="background: var(--neon-cyan);"></span>
+            STATUS: CERTIFIED AUTHENTIC
+          </div>
+          <h2 class="modal-project-title">JAYVEE // SOFTWARE ARCHITECT</h2>
+          <p class="modal-project-tagline">Full-Stack Engineer &bull; AI Specialist &bull; UI/UX Innovator</p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">// DOSSIER SUMMARY</h4>
+          <p class="modal-overview-text">
+            Extensive expertise spanning reactive web frameworks (React, Next.js), backend distributed systems (Node.js, FastAPI, PostgreSQL, Redis), embedded microcontrollers (ESP32, C++), and deep learning models. Proven leadership in hackathons, open-source initiatives, and engineering societies.
+          </p>
+        </div>
+
+        <div class="modal-metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label">EXPERIENCE</span>
+            <span class="metric-val">3+ YEARS</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">CODE REPOSITORIES</span>
+            <span class="metric-val">24+ BUILDS</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">GPA STANDING</span>
+            <span class="metric-val">3.9 / 4.0</span>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">// CUSTOMIZATION INSTRUCTION</h4>
+          <p class="modal-overview-text">
+            You can drop your official PDF resume into the <code class="t-accent">assets/</code> folder and update <code class="t-accent">resumeUrl</code> in <code class="t-accent">js/data.js</code> to link your custom document.
+          </p>
+        </div>
+
+        <div class="modal-actions-bar">
+          <button type="button" id="resume-download-btn" class="btn-cyber-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Download Official Resume (PDF)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Root -->
+  <div id="cyber-toast-container"></div>
+
+  <!-- Application Scripts (Modular, Zero Build Step Required) -->
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
