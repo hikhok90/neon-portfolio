@@ -116,7 +116,7 @@ The repository is already initialized on branch `main` with a clean production c
 1. Go to [github.com/new](https://github.com/new) and create a repository named **`neon-portfolio`** (leave "Initialize this repository with a README" unchecked).
 2. Connect your local repository and push:
    ```bash
-   git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/neon-portfolio.git
+   git remote add origin https://github.com/hikhok90/neon-portfolio.git
    git push -u origin main
    ```
 
