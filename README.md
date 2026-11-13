@@ -97,8 +97,51 @@ Open [js/data.js](file:///c:/Users/Jayvee/Documents/simple-website/js/data.js) i
 
 ---
 
+## 🛠️ Technologies Used
+
+- **Core**: Semantic HTML5, CSS3 Custom Properties, Modern JavaScript (ESNext, modular architecture)
+- **Visuals & Effects**: HTML5 Canvas API (interactive particle & filament grid), CSS Glassmorphism (`backdrop-filter`), 3D CSS Perspective Transforms
+- **Audio Synthesizer**: Native Web Audio API (zero external sound files)
+- **Typography**: Google Fonts (`Orbitron`, `Rajdhani`, `Inter`, `JetBrains Mono`)
+- **Hosting & Infrastructure**: Vercel Static Hosting, GitHub Pages, or any modern CDN / static web server
+
+---
+
 ## 🚀 Deployment Guide
 
-You can deploy this portfolio for free in under 60 seconds:
-- **GitHub Pages**: Push this repository to GitHub, go to **Settings > Pages**, select the `main` branch, and save.
-- **Vercel / Netlify**: Drag-and-drop the `simple-website` folder or connect your Git repository. It deploys instantly as a static site.
+### 1. Push to GitHub
+
+The repository is already initialized on branch `main` with a clean production commit and `.gitignore`.
+
+1. Go to [github.com/new](https://github.com/new) and create a repository named **`neon-portfolio`** (leave "Initialize this repository with a README" unchecked).
+2. Connect your local repository and push:
+   ```bash
+   git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/neon-portfolio.git
+   git push -u origin main
+   ```
+
+---
+
+### 2. Deploy to Vercel
+
+The project includes a production-ready `vercel.json` configured with security headers and asset caching.
+
+#### Method A: Direct GitHub Import (Recommended)
+1. Go to [vercel.com/new](https://vercel.com/new).
+2. Under **"Import Git Repository"**, select your `neon-portfolio` repository.
+3. Keep default settings:
+   - **Framework Preset**: `Other`
+   - **Root Directory**: `./`
+   - **Build Command**: *None (Static HTML/CSS/JS)*
+   - **Output Directory**: *None (root `./`)*
+4. Click **Deploy**. Vercel will build and assign an instant production URL (e.g. `https://neon-portfolio.vercel.app`).
+
+#### Method B: Deploy using Vercel CLI
+If you have Node.js and Vercel CLI installed:
+```bash
+# In the project root:
+npx vercel
+# Follow the interactive prompt, then deploy to production:
+npx vercel --prod
+```
+
